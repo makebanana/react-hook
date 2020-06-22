@@ -172,3 +172,26 @@ useEffect(() => {
   return () => clearInterval(id)
 }, [])
 ```
+
+当我们定时器依赖别的数据时候
+
+```
+const [count, setCount] = useState(0)
+const [step, setStep] = useState(1)
+useEffect(() => {
+  const id = setInterval(() => {
+    setCount(c => c + step)
+  }, 1000);
+  return () => clearInterval(id)
+}, [step])
+
+return (
+  <>
+    <h1>{count}</h1>
+    <input value={step} onChange={e => setStep(Number(e.target.value))} />
+  </>
+)
+
+```
+
+当我们在修改 step 变量时，会重新设置定时器。这是我们不愿意看到的，那应该怎么去优化呢？这个时候我们就需要用到useReducer了。
