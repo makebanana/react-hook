@@ -5,4 +5,4 @@
 * [useRef](useRef.md)
 * [useEffect](useEffect.md)
 * [useReducer](useReducer.md)
-* [useCallback](useCallback.md)
+* [useMemo](useMemo.md)
