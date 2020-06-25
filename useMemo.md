@@ -1,7 +1,7 @@
-# useMemo
+# useMemo　(性能优化)
 
 由于react有Capture Value机制,组件状态修改后,整个组件都会从新去执行   
-当我们某些函数(组件)没有依赖更改的状态是不需要从新渲染的,这个时候就需要useMemo
+当我们某些函数(组件)返回的值没有依赖更改的状态是不需要从新渲染的,这个时候就需要useMemo
 
 ```
 const testUseMemo = (num) => {
